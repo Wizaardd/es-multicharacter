@@ -102,7 +102,7 @@ function CreateCharId(source)
 	local CitizenId = nil
 
 	while not UniqueFound do
-		CitizenId = tostring(RandomStr(3) .. RandomInt(5)):upper() .. ":"..GetPlayerIdentifiers(source)[1]
+		CitizenId = tostring(RandomStr(2) .. RandomInt(2)):upper() .. ":"..GetPlayerIdentifiers(source)[1]
 		MySQL.Sync.fetchAll("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {}, function(result)
 			if #result == 0 then
 				UniqueFound = true
@@ -198,7 +198,7 @@ function CreateCharId(source)
 	local CitizenId = nil
 
 	while not UniqueFound do
-		CitizenId = tostring(RandomStr(3) .. RandomInt(5)):upper() .. ":"..GetPlayerIdentifiers(source)[1]
+		CitizenId = tostring(RandomStr(2) .. RandomInt(2)):upper() .. ":"..GetPlayerIdentifiers(source)[1]
 		exports.ghmattimysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {}, function(result)
 			if #result == 0 then
 				UniqueFound = true
@@ -295,7 +295,7 @@ function CreateCharId(source)
 	local CitizenId = nil
 
 	while not UniqueFound do
-		CitizenId = tostring(RandomStr(3) .. RandomInt(5)):upper() .. ":"..GetPlayerIdentifiers(source)[1]
+		CitizenId = tostring(RandomStr(2) .. RandomInt(2)):upper() .. ":"..GetPlayerIdentifiers(source)[1]
 		local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
 		if #result == 0 then
 			UniqueFound = true
