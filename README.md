@@ -1,5 +1,5 @@
 
-# [ESX]
+# [ESX] 
 For those using ESX it needs to use it with some operations
 
 save sql data to database
@@ -7,15 +7,31 @@ save sql data to database
 enter file
 es_extended>server>main.lua
 
-remove
-```lua
-RegisterNetEvent('esx:onPlayerJoined')
-AddEventHandler('esx:onPlayerJoined', function()
-	if not ESX.Players[source] then
-		onPlayerJoined(source)
-	end
-end)
-```
+> delete these codes
+
+![image](https://user-images.githubusercontent.com/61948938/205921237-5bb3d998-74b8-442c-a5c5-0d2c1a9704b3.png)
+
+
+# [ESX-LEGACY]
+
+First, enter the config.lua file and set Config.Multichar false.
+
+
+![image](https://user-images.githubusercontent.com/61948938/205920513-f8f04bf9-0bbd-4cc1-9e14-ef6ddb6fc1f4.png)
+
+For those using ESX it needs to use it with some operations
+
+save sql data to database
+
+enter file
+es_extended>server>main.lua
+
+
+> delete these codes
+
+![image](https://user-images.githubusercontent.com/61948938/205920836-fca57c3d-32cf-42e9-9da9-612d4a53e94c.png)
+
+
 
 
 # Add the following codes according to the sql structure you use.
@@ -307,7 +323,6 @@ function CreateCharId(source)
 	return CitizenId
 end
 ```
-
 
 
 
