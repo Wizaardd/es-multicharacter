@@ -114,42 +114,33 @@ end
 
 
 
-
 function CreateCharId(source)
-	local UniqueFound = false
-	local CitizenId = nil
-  local ilkdeneme = false
-  local rakam = 0
+    local UniqueFound = false
+    local CitizenId = nil
+    local ilkdeneme = false
+    local rakam = 0
 
-	while not UniqueFound do
-    if not ilkdeneme then
-      CitizenId = GetPlayerIdentifiers(source)[1]
-      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-      if #result == 0 then
-        UniqueFound = true
-      else
-        ilkdeneme = true
-      end
-    else
-      rakam = rakam + 1
-      CitizenId = "Char:".. rakam .. string.sub(GetPlayerIdentifiers(source)[1], 6)
-      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-      if #result == 0 then
-        UniqueFound = true
-      end
+    	while not UniqueFound do
+	    if not ilkdeneme then
+	      CitizenId = GetPlayerIdentifiers(source)[1]
+	      local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
+	      if #result == 0 then
+		UniqueFound = true
+	      else
+		ilkdeneme = true
+	      end
+	    else
+	      rakam = rakam + 1
+	      CitizenId = "Char:".. rakam .. string.sub(GetPlayerIdentifiers(source)[1], 6)
+	      local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
+	      if #result == 0 then
+		UniqueFound = true
+         end
 
-    end
-		-- CitizenId = ..RandomInt(2) .. ":"..string.sub(GetPlayerIdentifiers(source)[1], 6)
-		-- local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-		-- if #result == 0 then
-		-- 	UniqueFound = true
-		-- end
-	
-	end
-	
-	local CitizenId = CitizenId
-	return CitizenId
-endreturn CitizenId
+      end
+   end
+   local CitizenId = CitizenId
+   return CitizenId
 end
 ```
 
@@ -229,42 +220,33 @@ end
 
 
 
-
-
 function CreateCharId(source)
-	local UniqueFound = false
-	local CitizenId = nil
-  local ilkdeneme = false
-  local rakam = 0
+    local UniqueFound = false
+    local CitizenId = nil
+    local ilkdeneme = false
+    local rakam = 0
 
-	while not UniqueFound do
-    if not ilkdeneme then
-      CitizenId = GetPlayerIdentifiers(source)[1]
-      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-      if #result == 0 then
-        UniqueFound = true
-      else
-        ilkdeneme = true
-      end
-    else
-      rakam = rakam + 1
-      CitizenId = "Char:".. rakam .. string.sub(GetPlayerIdentifiers(source)[1], 6)
-      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-      if #result == 0 then
-        UniqueFound = true
-      end
+    	while not UniqueFound do
+	    if not ilkdeneme then
+	      CitizenId = GetPlayerIdentifiers(source)[1]
+	      local result = exports.ghmattimysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
+	      if #result == 0 then
+		UniqueFound = true
+	      else
+		ilkdeneme = true
+	      end
+	    else
+	      rakam = rakam + 1
+	      CitizenId = "Char:".. rakam .. string.sub(GetPlayerIdentifiers(source)[1], 6)
+	      local result = exports.ghmattimysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
+	      if #result == 0 then
+		UniqueFound = true
+         end
 
-    end
-		-- CitizenId = ..RandomInt(2) .. ":"..string.sub(GetPlayerIdentifiers(source)[1], 6)
-		-- local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-		-- if #result == 0 then
-		-- 	UniqueFound = true
-		-- end
-	
-	end
-	
-	local CitizenId = CitizenId
-	return CitizenId
+      end
+   end
+   local CitizenId = CitizenId
+   return CitizenId
 end
 ```
 
@@ -346,41 +328,33 @@ end
 
 
 
-
 function CreateCharId(source)
-	local UniqueFound = false
-	local CitizenId = nil
-  local ilkdeneme = false
-  local rakam = 0
+    local UniqueFound = false
+    local CitizenId = nil
+    local ilkdeneme = false
+    local rakam = 0
 
-	while not UniqueFound do
-    if not ilkdeneme then
-      CitizenId = GetPlayerIdentifiers(source)[1]
-      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-      if #result == 0 then
-        UniqueFound = true
-      else
-        ilkdeneme = true
-      end
-    else
-      rakam = rakam + 1
-      CitizenId = "Char:".. rakam .. string.sub(GetPlayerIdentifiers(source)[1], 6)
-      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-      if #result == 0 then
-        UniqueFound = true
-      end
+    	while not UniqueFound do
+	    if not ilkdeneme then
+	      CitizenId = GetPlayerIdentifiers(source)[1]
+	      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
+	      if #result == 0 then
+		UniqueFound = true
+	      else
+		ilkdeneme = true
+	      end
+	    else
+	      rakam = rakam + 1
+	      CitizenId = "Char:".. rakam .. string.sub(GetPlayerIdentifiers(source)[1], 6)
+	      local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
+	      if #result == 0 then
+		UniqueFound = true
+         end
 
-    end
-		-- CitizenId = ..RandomInt(2) .. ":"..string.sub(GetPlayerIdentifiers(source)[1], 6)
-		-- local result = exports.oxmysql:executeSync("SELECT * FROM users WHERE  identifier LIKE '%"..CitizenId.."%'", {})
-		-- if #result == 0 then
-		-- 	UniqueFound = true
-		-- end
-	
-	end
-	
-	local CitizenId = CitizenId
-	return CitizenId
+      end
+   end
+   local CitizenId = CitizenId
+   return CitizenId
 end
 ```
 
